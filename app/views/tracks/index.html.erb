@@ -1,0 +1,22 @@
+<%= pluralize(@tracks.count, "Track") %>
+<table>
+<tr>
+  <td colspan="5"><%= render 'layouts/navigation' %></td>
+</tr>
+  <tr>
+    <td colspan="5"><%= will_paginate @tracks %></td>
+  </tr>
+  <tr>
+    <th>name</th>
+    <th>artist</th>
+    <th>album</th>
+  </tr>
+<% @tracks.each do |track| %>
+    <tr>
+      <td><%= track.name %> </td>
+      <td><%= track.artist.name %></td>
+      <td><%= track.album.name if track.album.name %></td>
+    </tr>
+<% end %>
+
+</table>

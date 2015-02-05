@@ -1,0 +1,23 @@
+<%= form_for(@play) do |f| %>
+
+        <% @play.build_artist %>
+        <%= f.fields_for :artist do |artist| %>
+            <%= artist.label :artist, "Artist" %>
+            <%= artist.text_field :name %>
+        <% end %>
+        <hr>
+        <% @play.build_album %>
+        <%= f.fields_for :album do |album| %>
+            <%= album.label :album, "Album" %>
+            <%= album.text_field :name %>
+        <% end %>
+        <hr>
+        <% @play.build_track %>
+        <%= f.fields_for :track do |track| %>
+            <%= track.label :track, "Track" %>
+            <%= track.text_field :name %>
+        <% end %>
+<hr>
+    <%= f.submit %> | <%= link_to "Cancel", plays_path %>
+
+<% end %>

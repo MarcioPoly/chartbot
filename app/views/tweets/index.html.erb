@@ -1,0 +1,6 @@
+tweets:
+<ol>
+  <% @tweets.each do |tweet| %>
+  <li><%= tweet.id %> || <%= tweet.description %>|| <%= tweet.query %> || <%= tweet.next_tweet %></li>
+  <% end %>
+</ol>

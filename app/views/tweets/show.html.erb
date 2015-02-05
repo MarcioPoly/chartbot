@@ -1,0 +1,14 @@
+tweet:
+<ul>
+  <li><%= @tweet.id %>||<%= @tweet.description %>|| <%= @tweet.query %> || <%= @tweet.next_tweet %></li>
+</ul>
+
+how to build a tweet query:
+
+text = Tweet.find([:id]) <- initialize
+
+tweet eval text.query <- query Play records
+
+query is stored string called with eval
+
+

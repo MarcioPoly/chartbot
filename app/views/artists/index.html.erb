@@ -1,0 +1,42 @@
+<table>
+<tr>
+  <td colspan="5"><%= pluralize(@artists.count, "Artist")%><%= will_paginate @artists %></td>
+</tr>
+  <tr>
+    <th>id</th>
+    <th>plays</th>
+    <th>artist</th>
+    <th>album(s)</th>
+    <th>track(s)</th>
+  </tr>
+  <% @artists.each do |artist| %>
+      <tr>
+        <td>
+          <%= artist.id %>
+        </td>
+
+        <td>
+          <%= artist.plays.count %>
+        </td>
+
+        <td>
+          <%= artist.name %>
+        </td>
+
+        <td>
+          <% artist.albums.each do |album| %>
+              <li><%= album.name %></li>
+          <% end %>
+        </td>
+        <td>
+          <% artist.tracks.each do |track| %>
+              <li><%= track.name %></li>
+          <% end %>
+        </td>
+      </tr>
+
+<% end %>
+
+
+</table>
+<%= will_paginate @artists %>

@@ -1,0 +1,14 @@
+<%= pluralize(@plays.count, "Play") %>
+
+<table>
+  <% @plays.each do |play| %>
+      <tr>
+        <td style="width: 100px"><%= play.playdate %>. . .</td>
+        <td><%= play.track.name %></td>
+        <td><%= play.artist.name %></td>
+        <td><%= play.album.name %></td>
+        <td><%= play.djname %></td>
+      </tr>
+  <% end %>
+</table>
+

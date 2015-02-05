@@ -1,0 +1,17 @@
+<%= form_for(@tweet) do |f| %>
+    
+    <%= f.label :description, "Description" %>
+    <%= f.text_field :description %>
+<hr>
+    <%= f.label :query, "query" %>
+    <%= f.text_field :query %>
+<hr>
+    <%= f.label :new_tweet, "next tweet" %>
+    <%= f.datetime_select :next_tweet%>
+<hr>
+
+
+
+    <%= f.submit %> | <%= link_to "Cancel", tweets_path %>
+
+<% end %>
